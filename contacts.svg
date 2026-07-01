@@ -36,7 +36,7 @@
   <!-- Background -->
   <rect width="100%" height="100%" class="bg" />
   
-  <!-- Terminal Border Window frame -->
+  <!-- Terminal Border Window frame (Fully Closed) -->
   <path d="M 10,10 L 790,10 L 790,240 L 10,240 Z" fill="none" class="border-line" />
   <path d="M 10,40 L 790,40" class="border-line" />
 
@@ -56,19 +56,26 @@
   
   <text x="50" y="125" class="text-neon" style="font-weight: bold;">[ DECRYPTED COMMUNICATIONS ]</text>
   
+  <!-- ================================================================= -->
+  <!-- EDIT YOUR CONTACT DATA HERE: Replace the text fields below        -->
+  <!-- ================================================================= -->
+  
+  <!-- Telegram details -->
   <text x="50" y="155" class="text-green">TELEGRAM:</text>
   <text x="150" y="155" class="text-green">@retr0_sec</text>
   <text x="320" y="155" class="text-dim">(t.me/retr0_sec)</text>
 
+  <!-- Keybase details -->
   <text x="50" y="180" class="text-green">KEYBASE:</text>
   <text x="150" y="180" class="text-green">retr0_sec</text>
   <text x="320" y="180" class="text-dim">(keybase.io/retr0_sec)</text>
 
+  <!-- Email details -->
   <text x="50" y="205" class="text-green">EMAIL:</text>
   <text x="150" y="205" class="text-green">retr0@example.com</text>
   <text x="320" y="205" class="text-dim">(secured via GPG)</text>
 
-  <!-- Right section (represented as PGP signature info or hash details) -->
+  <!-- GPG / PGP Public Key Section (Edit lines 63-68 to update your GPG block) -->
   <path d="M 530,110 L 530,215" class="border-line" stroke-opacity="0.15" />
   <text x="550" y="135" class="text-green">GPG KEY BLOCK (ID: FAD1337BEEF)</text>
   <text x="550" y="155" class="text-dim">-----BEGIN PGP PUBLIC KEY BLOCK-----</text>

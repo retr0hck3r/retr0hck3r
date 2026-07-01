@@ -31,8 +31,8 @@
   <!-- Background -->
   <rect width="100%" height="100%" class="bg" />
   
-  <!-- Terminal Border Window frame (Open at bottom to connect to next SVG) -->
-  <path d="M 10,90 L 10,10 L 790,10 L 790,90" fill="none" class="border-line" />
+  <!-- Terminal Border Window frame (Fully Closed) -->
+  <path d="M 10,10 L 790,10 L 790,80 L 10,80 Z" fill="none" class="border-line" />
   <path d="M 10,40 L 790,40" class="border-line" />
 
   <!-- Terminal Window Controls (OS style minimize/maximize/close) -->

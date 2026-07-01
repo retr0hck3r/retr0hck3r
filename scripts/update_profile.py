@@ -128,21 +128,27 @@ def get_uptime_string():
     return f" {current_time_str} up {days} days, {hours:02d}:{minutes:02d},  1 user,  load average: {load_avg}"
 
 def get_uptime_svg_nodes(uptime_str):
-    return f'  <text x="30" y="45" class="text-green">{uptime_str}</text>'
+    return f'  <text x="30" y="85" class="text-green">{uptime_str}</text>'
 
 def get_load_svg_nodes(cpu_percent, ram_percent):
-    def draw_bar(pct, width=20):
-        filled = int((pct / 100) * width)
-        return "[" + "█" * filled + "░" * (width - filled) + f"] {pct}%"
-        
-    cpu_bar = draw_bar(cpu_percent)
-    ram_bar = draw_bar(ram_percent)
+    cpu_width = int((cpu_percent / 100) * 150)
+    ram_width = int((ram_percent / 100) * 150)
     
-    return f'  <text x="30" y="115" class="text-green">cpu_load: {cpu_bar}</text>\n  <text x="30" y="135" class="text-green">ram_load: {ram_bar}</text>'
+    lines = [
+        f'  <text x="30" y="155" class="text-green">cpu_load: [</text>',
+        f'  <rect x="110" y="145" width="150" height="10" fill="#15202e" rx="2" />',
+        f'  <rect x="110" y="145" width="{cpu_width}" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />',
+        f'  <text x="270" y="155" class="text-green">] {cpu_percent}%</text>',
+        f'  <text x="30" y="175" class="text-green">ram_load: [</text>',
+        f'  <rect x="110" y="165" width="150" height="10" fill="#15202e" rx="2" />',
+        f'  <rect x="110" y="165" width="{ram_width}" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />',
+        f'  <text x="270" y="175" class="text-green">] {ram_percent}%</text>'
+    ]
+    return "\n".join(lines)
 
 def get_ops_svg_nodes(ops_json):
     lines = []
-    y_start = 185
+    y_start = 225
     for pid, data in ops_json.items():
         process = data["process"]
         progress = data["progress"]
