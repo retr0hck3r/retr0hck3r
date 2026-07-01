@@ -50,7 +50,7 @@
   <!-- Uptime Command -->
   <text x="30" y="65" class="text-dim">retr0@white-server:~$ uptime</text>
   <!-- START_UPTIME -->
-  <text x="30" y="85" class="text-green"> 19:19:32 up 47 days, 07:19,  1 user,  load average: 0.10, 0.28, 0.42</text>
+  <text x="30" y="85" class="text-green"> 19:32:16 up 47 days, 07:32,  1 user,  load average: 0.11, 0.29, 0.43</text>
   <!-- END_UPTIME -->
 
   <!-- Load Command -->
@@ -59,12 +59,12 @@
   <!-- START_SYSTEM_LOAD -->
   <text x="30" y="155" class="text-green">cpu_load: [</text>
   <rect x="110" y="145" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="110" y="145" width="93" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="270" y="155" class="text-green">] 62%</text>
+  <rect x="110" y="145" width="51" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="270" y="155" class="text-green">] 34%</text>
   <text x="30" y="175" class="text-green">ram_load: [</text>
   <rect x="110" y="165" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="110" y="165" width="61" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="270" y="175" class="text-green">] 41%</text>
+  <rect x="110" y="165" width="58" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="270" y="175" class="text-green">] 39%</text>
   <!-- END_SYSTEM_LOAD -->
 
   <!-- Operations Command -->
