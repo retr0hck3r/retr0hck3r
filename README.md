@@ -1,12 +1,13 @@
 <p align="center">
-  <img src="crt_banner.svg" alt="retr0node CRT Terminal" width="100%" />
+  <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/header.svg" alt="retr0hck3r header" width="100%" />
 </p>
 
-```bash
-retr0@white-server:~$ cat /etc/motd
-```
+<p align="center">
+  <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/crt_banner.svg" alt="retr0hck3r terminal banner" width="100%" />
+</p>
 
 ```text
+retr0@white-server:~$ cat /etc/motd
 ================================================================================
 ██████╗ ███████╗████████╗██████╗  ██████╗ ███╗   ██╗ ██████╗ ██████╗ ███████╗
 ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗████╗  ██║██╔═══██╗██╔══██╗██╔════╝
@@ -21,89 +22,30 @@ retr0@white-server:~$ cat /etc/motd
  * Terminal:    ttyS001 (monochrome CRT green #00FF99)
  * Alert:       No vulnerabilities found. Annoying, but responsible.
 ================================================================================
-```
 
-```bash
 retr0@white-server:~$ uptime
-```
-
-```text
 <!-- START_UPTIME -->
- 19:00:19 up 47 days, 07:00,  1 user,  load average: 0.07, 0.15, 0.34
+ 19:03:16 up 47 days, 07:03,  1 user,  load average: 0.11, 0.14, 0.43
 <!-- END_UPTIME -->
-```
 
-```bash
-retr0@white-server:~$ whoami --profile
-```
+retr0@white-server:~$ systemctl status system-load.service
+● system-load.service - Resource Monitor
+     Loaded: loaded (/etc/systemd/system/system-load.service; enabled)
+     Active: active (running) since Wed 2026-05-15 12:00:00 UTC
+<!-- START_SYSTEM_LOAD -->
+cpu_load: [██░░░░░░░░░░░░░░░░░░] 14%
+ram_load: [█████████████░░░░░░░] 69%
+<!-- END_SYSTEM_LOAD -->
 
-```yaml
----
-user: "retr0"
-hostname: "white-server"
-roles:
-  - "Cybersecurity Researcher / Red Teamer"
-  - "Automation Engineer"
-  - "Linux System Enthusiast"
-status: "Monitoring network traffic and securing endpoints"
-location: "127.0.0.1"
-mission: "Automating tasks, hardening systems, and debugging reality."
-certifications:
-  - "OSCP (Offensive Security Certified Professional)"
-  - "CEH (Certified Ethical Hacker)"
-  - "eWPT (eLearnSecurity Web Application Penetration Tester)"
----
-```
+retr0@white-server:~$ cat /sys/devices/system/skills.status
+============================ SKILL MODULES ============================
+OFFENSIVE   [██████████████████░░] 90%  (BurpSuite, Nmap, Exploits, Web)
+DEFENSIVE   [████████████░░░░░░░░] 60%  (Suricata, Wireshark, SIEM, Logs)
+AUTOMATION  [████████████████░░░░] 80%  (Python, Go, Bash, Docker, Git)
+RESEARCH    [██████████████░░░░░░] 70%  (CTF Reverse/Pwn, 0-day Tracking)
+=======================================================================
 
-```bash
-retr0@white-server:~$ tree --dirsfirst /home/retr0/skills
-```
-
-```text
-/home/retr0/skills
-├── offensive
-│   ├── scanning_recon
-│   │   ├── nmap
-│   │   ├── gobuster
-│   │   └── ffuf / shodan
-│   ├── vuln_analysis
-│   │   ├── burp_suite_pro
-│   │   └── owasp_zap / nikto
-│   └── exploitation
-│       ├── metasploit / sqlmap
-│       ├── john_the_ripper / hydra
-│       └── web_vulns (xss, sqli, ssrf, lfi, oauth_bypass)
-├── defensive
-│   ├── traffic_analysis
-│   │   ├── wireshark
-│   │   └── tcpdump
-│   ├── threat_detection
-│   │   ├── suricata
-│   │   └── snort
-│   ├── security_monitoring
-│   │   └── elk_stack / splunk
-│   └── hardening
-│       └── docker_bench / trivy / kubernetes
-├── automate_and_develop
-│   ├── programming_languages
-│   │   ├── python / go
-│   │   └── bash / powershell
-│   ├── infrastructure
-│   │   ├── linux_unix_admin
-│   │   └── docker / git
-│   └── custom_tooling
-│       └── port_scanners / fuzzers
-└── ctf_and_research
-    ├── focus_areas (web, reverse, pwn, crypto, forensic)
-    ├── learning_platforms (hackthebox, tryhackme, portswigger)
-    └── security_research (0-day_tracking)
-```
-
-```bash
 retr0@white-server:~$ cat /var/log/active_ops.json
-```
-
-```json
 <!-- START_OPS -->
 {
   "PID_8043": {
@@ -123,30 +65,16 @@ retr0@white-server:~$ cat /var/log/active_ops.json
   }
 }
 <!-- END_OPS -->
-```
 
-```bash
 retr0@white-server:~$ systemctl status motivation.service
-```
-
-```text
 ● motivation.service - Motivation Daemon
-     Loaded: loaded (/etc/systemd/system/motivation.service; enabled; vendor preset: enabled)
-     Active: failed (Result: core-dump) since Wed 2026-07-01 18:00:21 MSK; 3h 54min ago
-   Main PID: 1337 (code=dumped, signal=ABRT)
+     Loaded: loaded (/etc/systemd/system/motivation.service; enabled)
+     Active: failed (Result: core-dump) since Wed 2026-07-01 18:00:21 MSK
      Status: "Failed to establish meaningful dopamine loop."
-```
 
-```bash
 retr0@white-server:~$ ping -c 1 reality
-```
-
-```text
 PING reality (127.0.0.1) 56(84) bytes of data.
-
---- reality ping statistics ---
-1 packets transmitted, 0 received, 100% packet loss, time 0ms
-Request timed out.
+Request timed out (100% packet loss).
 ```
 
 ```bash

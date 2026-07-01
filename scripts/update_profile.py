@@ -1,6 +1,7 @@
 import os
 import sys
 import json
+import random
 import urllib.request
 from datetime import datetime
 
@@ -117,7 +118,6 @@ def get_uptime_string():
     
     current_time_str = now.strftime("%H:%M:%S")
     
-    # Calculate load averages (varying slightly based on the current minute for realism)
     h = hash(f"{now.hour}:{now.minute}")
     l1 = 0.05 + ((h % 15) / 100.0)
     l2 = 0.10 + (((h + 3) % 25) / 100.0)
@@ -127,7 +127,17 @@ def get_uptime_string():
     
     return f" {current_time_str} up {days} days, {hours:02d}:{minutes:02d},  1 user,  load average: {load_avg}"
 
-def update_file(filepath, uptime_str, ops_json):
+def get_system_load_string():
+    cpu = random.randint(12, 85)
+    ram = random.randint(30, 72)
+    
+    def draw_bar(pct, width=20):
+        filled = int((pct / 100) * width)
+        return "[" + "█" * filled + "░" * (width - filled) + f"] {pct}%"
+        
+    return f"cpu_load: {draw_bar(cpu)}\nram_load: {draw_bar(ram)}"
+
+def update_file(filepath, uptime_str, ops_json, load_str):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
         
@@ -149,6 +159,15 @@ def update_file(filepath, uptime_str, ops_json):
         after = content.split(end_ops_tag)[1]
         ops_str = json.dumps(ops_json, indent=2)
         content = f"{before}{start_ops_tag}\n{ops_str}\n{end_ops_tag}{after}"
+
+    # Replace System Load
+    start_load_tag = "<!-- START_SYSTEM_LOAD -->"
+    end_load_tag = "<!-- END_SYSTEM_LOAD -->"
+    
+    if start_load_tag in content and end_load_tag in content:
+        before = content.split(start_load_tag)[0]
+        after = content.split(end_load_tag)[1]
+        content = f"{before}{start_load_tag}\n{load_str}\n{end_load_tag}{after}"
         
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(content)
@@ -160,13 +179,14 @@ def main():
     
     uptime_str = get_uptime_string()
     ops_json = fetch_active_ops(username)
+    load_str = get_system_load_string()
     
     # Locate README.md in parent directory of the script or locally
     readme_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "README.md")
     if not os.path.exists(readme_path):
         readme_path = "README.md"
         
-    update_file(readme_path, uptime_str, ops_json)
+    update_file(readme_path, uptime_str, ops_json, load_str)
 
 if __name__ == "__main__":
     main()
