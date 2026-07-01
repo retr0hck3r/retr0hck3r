@@ -20,20 +20,23 @@
   <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/crt_banner.svg?v=3" alt="retr0hck3r CRT animated terminal banner" width="100%" />
 </p>
 
-<br recess />
+<br />
 
 <details>
-  <summary style="cursor: pointer; font-family: monospace;">
-    <kbd><font color="#00ff99"><b>🔑 retr0@white-server:~$ gpg --decrypt contacts.asc.gpg</b></font></kbd>
+  <summary style="cursor: pointer; font-family: monospace; color: #00ff99; font-weight: bold;">
+    🔑 retr0@white-server:~$ gpg --decrypt contacts.asc.gpg
   </summary>
   <br />
+  <a name="contacts"></a>
   <p align="center">
-    <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/contacts.svg?v=3" alt="retr0hck3r decrypted contacts" width="100%" />
+    <a href="#contacts">
+      <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/contacts.svg?v=3" alt="retr0hck3r decrypted contacts" width="100%" />
+    </a>
   </p>
 </details>
 
 <br />
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/cowsay_v2.svg?v=3" alt="retr0hck3r cowsay quote" width="100%" />
+  <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/cowsay_v3.svg" alt="retr0hck3r cowsay quote" width="100%" />
 </p>

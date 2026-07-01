@@ -22,7 +22,7 @@
       100% { transform: translateY(200px); }
     }
     .bg { fill: #07090e; }
-    .text-green { font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; fill: #00FF99; }
+    .text-green { font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; fill: #00FF99; white-space: pre; }
     .text-neon { font-family: 'Consolas', 'Courier New', monospace; font-size: 13.5px; fill: #00FF99; filter: url(#neon-glow); }
     .text-sub { font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; fill: #00FF99; opacity: 0.7; }
     
@@ -46,17 +46,17 @@
   
   <text x="400" y="29" text-anchor="middle" class="text-sub">session: fortune | cowsay</text>
 
-  <!-- Cowsay terminal output (Lines separated explicitly to avoid HTML whitespace collapse) -->
-  <g xml:space="preserve" class="text-green">
-    <text x="230" y="65"> _________________________________________</text>
-    <text x="230" y="80">/ Security is not a product, but a        \</text>
-    <text x="230" y="95">\ process. - Bruce Schneier               /</text>
-    <text x="230" y="110"> -----------------------------------------</text>
-    <text x="230" y="125">        \   ^__^</text>
-    <text x="230" y="140">         \  (oo)\_______</text>
-    <text x="230" y="155">            (__)\       )\/\</text>
-    <text x="230" y="170">                ||----w |</text>
-    <text x="230" y="185">                ||     ||</text>
+  <!-- Cowsay terminal output (Lines separated explicitly, with white-space style and preserve attributes) -->
+  <g class="text-green">
+    <text x="230" y="65" xml:space="preserve"> _________________________________________</text>
+    <text x="230" y="80" xml:space="preserve">/ Security is not a product, but a        \</text>
+    <text x="230" y="95" xml:space="preserve">\ process. - Bruce Schneier               /</text>
+    <text x="230" y="110" xml:space="preserve"> -----------------------------------------</text>
+    <text x="230" y="125" xml:space="preserve">        \   ^__^</text>
+    <text x="230" y="140" xml:space="preserve">         \  (oo)\_______</text>
+    <text x="230" y="155" xml:space="preserve">            (__)\       )\/\</text>
+    <text x="230" y="170" xml:space="preserve">                ||----w |</text>
+    <text x="230" y="185" xml:space="preserve">                ||     ||</text>
   </g>
 
   <!-- CRT Scanline overlay -->
