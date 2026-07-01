@@ -127,17 +127,37 @@ def get_uptime_string():
     
     return f" {current_time_str} up {days} days, {hours:02d}:{minutes:02d},  1 user,  load average: {load_avg}"
 
-def get_system_load_string():
-    cpu = random.randint(12, 85)
-    ram = random.randint(30, 72)
-    
+def get_uptime_svg_nodes(uptime_str):
+    return f'  <text x="30" y="85" class="text-green">{uptime_str}</text>'
+
+def get_load_svg_nodes(cpu_percent, ram_percent):
     def draw_bar(pct, width=20):
         filled = int((pct / 100) * width)
         return "[" + "█" * filled + "░" * (width - filled) + f"] {pct}%"
         
-    return f"cpu_load: {draw_bar(cpu)}\nram_load: {draw_bar(ram)}"
+    cpu_bar = draw_bar(cpu_percent)
+    ram_bar = draw_bar(ram_percent)
+    
+    return f'  <text x="30" y="155" class="text-green">cpu_load: {cpu_bar}</text>\n  <text x="30" y="175" class="text-green">ram_load: {ram_bar}</text>'
 
-def update_file(filepath, uptime_str, ops_json, load_str):
+def get_ops_svg_nodes(ops_json):
+    lines = []
+    y_start = 225
+    for pid, data in ops_json.items():
+        process = data["process"]
+        progress = data["progress"]
+        status = data["status"]
+        
+        # Clean up any potential XML/HTML characters to prevent broken XML
+        status = status.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        process = process.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+        
+        line = f'  <text x="30" y="{y_start}" class="text-dim">{pid}: {process} [{progress}] ({status})</text>'
+        lines.append(line)
+        y_start += 15
+    return "\n".join(lines)
+
+def update_svg_file(filepath, uptime_nodes, load_nodes, ops_nodes):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
         
@@ -148,7 +168,16 @@ def update_file(filepath, uptime_str, ops_json, load_str):
     if start_uptime_tag in content and end_uptime_tag in content:
         before = content.split(start_uptime_tag)[0]
         after = content.split(end_uptime_tag)[1]
-        content = f"{before}{start_uptime_tag}\n{uptime_str}\n{end_uptime_tag}{after}"
+        content = f"{before}{start_uptime_tag}\n{uptime_nodes}\n  {end_uptime_tag}{after}"
+        
+    # Replace Load
+    start_load_tag = "<!-- START_SYSTEM_LOAD -->"
+    end_load_tag = "<!-- END_SYSTEM_LOAD -->"
+    
+    if start_load_tag in content and end_load_tag in content:
+        before = content.split(start_load_tag)[0]
+        after = content.split(end_load_tag)[1]
+        content = f"{before}{start_load_tag}\n{load_nodes}\n  {end_load_tag}{after}"
         
     # Replace Active Ops
     start_ops_tag = "<!-- START_OPS -->"
@@ -157,21 +186,11 @@ def update_file(filepath, uptime_str, ops_json, load_str):
     if start_ops_tag in content and end_ops_tag in content:
         before = content.split(start_ops_tag)[0]
         after = content.split(end_ops_tag)[1]
-        ops_str = json.dumps(ops_json, indent=2)
-        content = f"{before}{start_ops_tag}\n{ops_str}\n{end_ops_tag}{after}"
-
-    # Replace System Load
-    start_load_tag = "<!-- START_SYSTEM_LOAD -->"
-    end_load_tag = "<!-- END_SYSTEM_LOAD -->"
-    
-    if start_load_tag in content and end_load_tag in content:
-        before = content.split(start_load_tag)[0]
-        after = content.split(end_load_tag)[1]
-        content = f"{before}{start_load_tag}\n{load_str}\n{end_load_tag}{after}"
+        content = f"{before}{start_ops_tag}\n{ops_nodes}\n  {end_ops_tag}{after}"
         
     with open(filepath, 'w', encoding='utf-8') as f:
         f.write(content)
-    print("README.md updated successfully.")
+    print("system_status.svg updated successfully.")
 
 def main():
     username = get_github_username()
@@ -179,14 +198,21 @@ def main():
     
     uptime_str = get_uptime_string()
     ops_json = fetch_active_ops(username)
-    load_str = get_system_load_string()
     
-    # Locate README.md in parent directory of the script or locally
-    readme_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "README.md")
-    if not os.path.exists(readme_path):
-        readme_path = "README.md"
+    cpu_percent = random.randint(12, 85)
+    ram_percent = random.randint(30, 72)
+    
+    # Generate SVG nodes
+    uptime_nodes = get_uptime_svg_nodes(uptime_str)
+    load_nodes = get_load_svg_nodes(cpu_percent, ram_percent)
+    ops_nodes = get_ops_svg_nodes(ops_json)
+    
+    # Locate system_status.svg
+    svg_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "system_status.svg")
+    if not os.path.exists(svg_path):
+        svg_path = "system_status.svg"
         
-    update_file(readme_path, uptime_str, ops_json, load_str)
+    update_svg_file(svg_path, uptime_nodes, load_nodes, ops_nodes)
 
 if __name__ == "__main__":
     main()

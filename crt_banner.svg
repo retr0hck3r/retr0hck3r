@@ -81,7 +81,7 @@
       41.33%, 100% { opacity: 1; }
     }
 
-    /* Line 6 Prompt & Cursor Opacity */
+    /* Line 6 Prompt and Cursor Opacity */
     @keyframes show6 {
       0%, 46.67% { opacity: 0; } /* hidden until 7.0s */
       47.33%, 100% { opacity: 1; }
