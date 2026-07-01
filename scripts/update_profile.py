@@ -128,7 +128,7 @@ def get_uptime_string():
     return f" {current_time_str} up {days} days, {hours:02d}:{minutes:02d},  1 user,  load average: {load_avg}"
 
 def get_uptime_svg_nodes(uptime_str):
-    return f'  <text x="30" y="85" class="text-green">{uptime_str}</text>'
+    return f'  <text x="30" y="45" class="text-green">{uptime_str}</text>'
 
 def get_load_svg_nodes(cpu_percent, ram_percent):
     def draw_bar(pct, width=20):
@@ -138,11 +138,11 @@ def get_load_svg_nodes(cpu_percent, ram_percent):
     cpu_bar = draw_bar(cpu_percent)
     ram_bar = draw_bar(ram_percent)
     
-    return f'  <text x="30" y="155" class="text-green">cpu_load: {cpu_bar}</text>\n  <text x="30" y="175" class="text-green">ram_load: {ram_bar}</text>'
+    return f'  <text x="30" y="115" class="text-green">cpu_load: {cpu_bar}</text>\n  <text x="30" y="135" class="text-green">ram_load: {ram_bar}</text>'
 
 def get_ops_svg_nodes(ops_json):
     lines = []
-    y_start = 225
+    y_start = 185
     for pid, data in ops_json.items():
         process = data["process"]
         progress = data["progress"]
