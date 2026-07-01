@@ -30,7 +30,7 @@
   <a name="contacts"></a>
   <p align="center">
     <a href="#contacts">
-      <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/contacts.svg?v=3" alt="retr0hck3r decrypted contacts" width="100%" />
+      <img src="https://raw.githubusercontent.com/retr0hck3r/retr0hck3r/main/contacts.svg?v=4" alt="retr0hck3r decrypted contacts" width="100%" />
     </a>
   </p>
 </details>
