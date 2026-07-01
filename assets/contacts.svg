@@ -63,17 +63,17 @@
   <!-- Telegram details -->
   <text x="50" y="155" class="text-green">TELEGRAM:</text>
   <text x="150" y="155" class="text-green">@retr0_sec</text>
-  <text x="320" y="155" class="text-dim">(t.me/retr0_sec)</text>
+  <text x="340" y="155" class="text-dim">(t.me/retr0_sec)</text>
 
   <!-- Keybase details -->
   <text x="50" y="180" class="text-green">KEYBASE:</text>
   <text x="150" y="180" class="text-green">NULL</text>
-  <text x="320" y="180" class="text-dim">(NULL)</text>
+  <text x="340" y="180" class="text-dim">(NULL)</text>
 
   <!-- Email details -->
   <text x="50" y="205" class="text-green">EMAIL:</text>
   <text x="150" y="205" class="text-green">retr0mail.work@gmail.com</text>
-  <text x="320" y="205" class="text-dim">(secured via GPG)</text>
+  <text x="340" y="205" class="text-dim">(secured via GPG)</text>
 
   <!-- GPG / PGP Public Key Section (Edit lines 63-68 to update your GPG block) -->
   <path d="M 490,110 L 490,215" class="border-line" stroke-opacity="0.15" />
