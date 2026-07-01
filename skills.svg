@@ -54,33 +54,33 @@
   <text x="30" y="90" class="text-green text-neon">DEFENSIVE</text>
   <text x="130" y="90" class="text-green">[</text>
   <rect x="145" y="80" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="145" y="80" width="135" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="305" y="90" class="text-green">] 90%</text>
-  <text x="355" y="90" class="text-dim">(Suricata, Wireshark, SIEM, Containers Hardening)</text>
+  <rect x="145" y="80" width="129" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="305" y="90" class="text-green">] 86%</text>
+  <text x="355" y="90" class="text-dim">(Astra Linux SE, Dallas Lock, SNS, Wireshark)</text>
 
   <!-- Offensive (Secondary - 60%) -->
   <text x="30" y="115" class="text-green text-neon">OFFENSIVE</text>
   <text x="130" y="115" class="text-green">[</text>
   <rect x="145" y="105" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="145" y="105" width="90" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="305" y="115" class="text-green">] 60%</text>
-  <text x="355" y="115" class="text-dim">(BurpSuite, Nmap, Exploits, Web PenTesting)</text>
+  <rect x="145" y="105" width="63" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="305" y="115" class="text-green">] 42%</text>
+  <text x="355" y="115" class="text-dim">(BurpSuite, Nmap, CTF)</text>
 
   <!-- Automation (80%) -->
   <text x="30" y="140" class="text-green text-neon">AUTOMATION</text>
   <text x="130" y="140" class="text-green">[</text>
   <rect x="145" y="130" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="145" y="130" width="120" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="305" y="140" class="text-green">] 80%</text>
-  <text x="355" y="140" class="text-dim">(Python, Go, Bash Scripting, Docker, Git)</text>
+  <rect x="145" y="130" width="111" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="305" y="140" class="text-green">] 74%</text>
+  <text x="355" y="140" class="text-dim">(Python, Bash, Docker, Git)</text>
 
   <!-- Research (70%) -->
-  <text x="30" y="165" class="text-green text-neon">RESEARCH</text>
+  <text x="30" y="165" class="text-green text-neon">FOUNDATION</text>
   <text x="130" y="165" class="text-green">[</text>
   <rect x="145" y="155" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="145" y="155" width="105" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="305" y="165" class="text-green">] 70%</text>
-  <text x="355" y="165" class="text-dim">(CTF Reverse/Pwn, Web Security Research)</text>
+  <rect x="145" y="155" width="103" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="305" y="165" class="text-green">] 69%</text>
+  <text x="355" y="165" class="text-dim">(Proxmox, OpenWRT, VPN, Virtualization)</text>
 
   <!-- CRT Scanline overlay -->
   <rect width="100%" height="200" class="scanline" pointer-events="none" />
