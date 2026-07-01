@@ -73,7 +73,7 @@
     .text-dim { font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 14px; fill: #008855; }
     .text-sub { font-family: 'Consolas', 'Courier New', monospace; font-size: 13px; fill: #00FF99; opacity: 0.7; }
     .text-bold { font-weight: bold; }
-    .text-error { fill: #ff3366; }
+    .text-error { font-family: 'Consolas', 'Courier New', Courier, monospace; font-size: 14px; fill: #ff3366; }
     
     .mask { fill: #07090e; }
     .cursor-blink { animation: blink 1s infinite; }
