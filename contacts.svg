@@ -49,7 +49,7 @@
 
   <!-- GPG Decryption logs -->
   <text x="30" y="65" class="text-dim">gpg: Signature made Wed Jul  1 18:00:00 2026 MSK using RSA key FAD1337BEEF</text>
-  <text x="30" y="80" class="text-neon">gpg: Good signature from "retr0 &lt;retr0@example.com&gt;"</text>
+  <text x="30" y="80" class="text-neon">gpg: Good signature from "retr0 &lt;retr0mail.work@gmail.com&gt;"</text>
 
   <!-- Decrypted Contacts Grid -->
   <path d="M 30,100 L 770,100 L 770,225 L 30,225 Z" fill="none" class="border-line" stroke-opacity="0.15" />
