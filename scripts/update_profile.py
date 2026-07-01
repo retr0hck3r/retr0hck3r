@@ -213,10 +213,11 @@ def main():
     load_nodes = get_load_svg_nodes(cpu_percent, ram_percent)
     ops_nodes = get_ops_svg_nodes(ops_json)
     
-    # Locate system_status.svg
-    svg_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "system_status.svg")
+    # Locate system_status.svg inside assets/ directory
+    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    svg_path = os.path.join(base_dir, "assets", "system_status.svg")
     if not os.path.exists(svg_path):
-        svg_path = "system_status.svg"
+        svg_path = os.path.join("assets", "system_status.svg")
         
     update_svg_file(svg_path, uptime_nodes, load_nodes, ops_nodes)
 
