@@ -137,7 +137,7 @@
   <!-- Uptime Command -->
   <text x="30" y="125" class="text-dim">retr0@white-server:~$ uptime</text>
   <!-- START_UPTIME -->
-  <text x="30" y="145" class="text-green"> 05:59:06 up 47 days, 17:59,  1 user,  load average: 0.10, 0.28, 0.47</text>
+  <text x="30" y="145" class="text-green"> 09:18:37 up 47 days, 21:18,  1 user,  load average: 0.14, 0.12, 0.41</text>
   <!-- END_UPTIME -->
 
   <!-- Load Command -->
@@ -146,8 +146,8 @@
   <!-- START_SYSTEM_LOAD -->
   <text x="30" y="215" class="text-green">cpu_load: [</text>
   <rect x="110" y="205" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="110" y="205" width="34" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="270" y="215" class="text-green">] 23%</text>
+  <rect x="110" y="205" width="36" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="270" y="215" class="text-green">] 24%</text>
   <text x="30" y="235" class="text-green">ram_load: [</text>
   <rect x="110" y="225" width="150" height="10" fill="#15202e" rx="2" />
   <rect x="110" y="225" width="100" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
