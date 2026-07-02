@@ -136,27 +136,31 @@
   <!-- ================= SYSTEM STATUS SECTION ================= -->
   <!-- Uptime Command -->
   <text x="30" y="125" class="text-dim">retr0@white-server:~$ uptime</text>
-  <text x="30" y="145" class="text-green"> 03:54:12 up 47 days, 15:54,  1 user,  load average: 0.13, 0.31, 0.30</text>
+  <!-- START_UPTIME -->
+  <text x="30" y="145" class="text-green"> 05:58:43 up 47 days, 17:58,  1 user,  load average: 0.19, 0.17, 0.36</text>
+  <!-- END_UPTIME -->
 
   <!-- Load Command -->
   <text x="30" y="175" class="text-dim">retr0@white-server:~$ systemctl status system-load.service</text>
   <text x="30" y="195" class="text-green">● system-load.service - Resource Monitor (running)</text>
-  
+  <!-- START_SYSTEM_LOAD -->
   <text x="30" y="215" class="text-green">cpu_load: [</text>
   <rect x="110" y="205" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="110" y="205" width="69" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="270" y="215" class="text-green">] 46%</text>
-  
+  <rect x="110" y="205" width="84" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="270" y="215" class="text-green">] 56%</text>
   <text x="30" y="235" class="text-green">ram_load: [</text>
   <rect x="110" y="225" width="150" height="10" fill="#15202e" rx="2" />
-  <rect x="110" y="225" width="55" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
-  <text x="270" y="235" class="text-green">] 37%</text>
+  <rect x="110" y="225" width="70" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />
+  <text x="270" y="235" class="text-green">] 47%</text>
+  <!-- END_SYSTEM_LOAD -->
 
   <!-- Operations Command -->
   <text x="30" y="265" class="text-dim">retr0@white-server:~$ cat /var/log/active_ops.log</text>
+  <!-- START_OPS -->
   <text x="30" y="285" class="text-dim">PID_8043: subdomain-scanner-go [85%] (optimizing_concurrency)</text>
   <text x="30" y="300" class="text-dim">PID_2210: preparation-osep-cert [50%] (active_study)</text>
   <text x="30" y="315" class="text-dim">PID_1337: ctf-competition-engagement [running] (solving_reverse_pwn)</text>
+  <!-- END_OPS -->
   
   <path d="M 10,335 L 790,335" class="border-line" stroke-opacity="0.15" />
 

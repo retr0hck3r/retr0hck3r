@@ -128,27 +128,27 @@ def get_uptime_string():
     return f" {current_time_str} up {days} days, {hours:02d}:{minutes:02d},  1 user,  load average: {load_avg}"
 
 def get_uptime_svg_nodes(uptime_str):
-    return f'  <text x="30" y="85" class="text-green">{uptime_str}</text>'
+    return f'  <text x="30" y="145" class="text-green">{uptime_str}</text>'
 
 def get_load_svg_nodes(cpu_percent, ram_percent):
     cpu_width = int((cpu_percent / 100) * 150)
     ram_width = int((ram_percent / 100) * 150)
     
     lines = [
-        f'  <text x="30" y="155" class="text-green">cpu_load: [</text>',
-        f'  <rect x="110" y="145" width="150" height="10" fill="#15202e" rx="2" />',
-        f'  <rect x="110" y="145" width="{cpu_width}" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />',
-        f'  <text x="270" y="155" class="text-green">] {cpu_percent}%</text>',
-        f'  <text x="30" y="175" class="text-green">ram_load: [</text>',
-        f'  <rect x="110" y="165" width="150" height="10" fill="#15202e" rx="2" />',
-        f'  <rect x="110" y="165" width="{ram_width}" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />',
-        f'  <text x="270" y="175" class="text-green">] {ram_percent}%</text>'
+        f'  <text x="30" y="215" class="text-green">cpu_load: [</text>',
+        f'  <rect x="110" y="205" width="150" height="10" fill="#15202e" rx="2" />',
+        f'  <rect x="110" y="205" width="{cpu_width}" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />',
+        f'  <text x="270" y="215" class="text-green">] {cpu_percent}%</text>',
+        f'  <text x="30" y="235" class="text-green">ram_load: [</text>',
+        f'  <rect x="110" y="225" width="150" height="10" fill="#15202e" rx="2" />',
+        f'  <rect x="110" y="225" width="{ram_width}" height="10" fill="#00FF99" filter="url(#neon-glow)" rx="2" />',
+        f'  <text x="270" y="235" class="text-green">] {ram_percent}%</text>'
     ]
     return "\n".join(lines)
 
 def get_ops_svg_nodes(ops_json):
     lines = []
-    y_start = 225
+    y_start = 285
     for pid, data in ops_json.items():
         process = data["process"]
         progress = data["progress"]
@@ -213,11 +213,11 @@ def main():
     load_nodes = get_load_svg_nodes(cpu_percent, ram_percent)
     ops_nodes = get_ops_svg_nodes(ops_json)
     
-    # Locate system_status.svg inside assets/ directory
+    # Locate terminal.svg inside assets/ directory
     base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    svg_path = os.path.join(base_dir, "assets", "system_status.svg")
+    svg_path = os.path.join(base_dir, "assets", "terminal.svg")
     if not os.path.exists(svg_path):
-        svg_path = os.path.join("assets", "system_status.svg")
+        svg_path = os.path.join("assets", "terminal.svg")
         
     update_svg_file(svg_path, uptime_nodes, load_nodes, ops_nodes)
 
